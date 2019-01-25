@@ -1,3 +1,8 @@
+This is a slightly modified version of oTree libraries.
+There is an additional command runhftserver that modifies
+runserver, and two extra lines in tasks.py so I can offload
+some work to Huey consumer.
+
 `Homepage`_
 
 These are the core oTree libraries.
