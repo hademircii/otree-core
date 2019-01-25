@@ -1,7 +1,18 @@
+<<<<<<< HEAD
 This is a slightly modified version of oTree libraries.
 There is an additional command runhftserver that modifies
 runserver, and two extra lines in tasks.py so I can offload
 some work to Huey consumer.
+=======
+
+
+This is a slightly modified version of original libraries. 
+There is an additional command, runhftserver that modifies 
+runserver and 2 extra lines in tasks.py, 
+so I can offload some work to Huey consumer.
+
+
+>>>>>>> af9a6b8d5358decac8f38426563d0e57f6c363e0
 
 `Homepage`_
 
@@ -28,10 +39,10 @@ Typical setup
 
 ::
 
-    pip install --upgrade otree
+    pip install -U otree
     otree startproject oTree
-    otree resetdb
-    otree runserver
+    cd oTree
+    otree devserver
 
 Core dev setup
 ~~~~~~~~~~~~~~
@@ -44,16 +55,13 @@ then run this from the project root:
     pip install -e .
     cd .. # or wherever you will start your project
     otree startproject oTree
-    otree resetdb
-    otree runserver
+    cd oTree
+    otree devserver
 
-See `this`_ document that explains how oTree differs from a typical
-Django project.
 
 |Build Status|
 
 .. _Homepage: http://www.otree.org/
-.. _this: http://otree.readthedocs.io/en/latest/django.html
 
 .. |Build Status| image:: https://travis-ci.org/oTree-org/otree-core.svg?branch=master
    :target: https://travis-ci.org/oTree-org/otree-core
