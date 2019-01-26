@@ -5,7 +5,7 @@ import django.test
 from huey.contrib.djhuey import db_task
 
 from otree import constants_internal
-
+from django.core.cache import cache
 
 test_client = django.test.Client()
 
@@ -59,3 +59,10 @@ def ensure_pages_visited(participant_pk_set):
         # current_wait_page_url)
         url = participant._url_i_should_be_on()
         test_client.get(url, follow=True)
+
+# add this to test use of huey during a session
+
+@db_task()
+def hft_background_task(function, *args, **kwargs):
+    function(*args, **kwargs)
+    
